@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaimee Gogoi | Data Science & AI Enthusiast</title>
+    <style>
+        :root {
+            --bg-dark: #0a110e;
+            --card-bg: #111d17;
+            --accent-gold: #e5b967;
+            --accent-green: #3a5a40;
+            --text-light: #e0e7e3;
+            --text-muted: #8b9b90;
+            --border-color: #1e3328;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .resume-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text p.welcome {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .hero-text h2 {
+            font-size: 1.3rem;
+            color: #4ead7a;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p.desc {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: var(--accent-green);
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid var(--accent-gold);
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-color);
+            color: var(--text-light);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        /* Section Title */
+        .section-title {
+            color: var(--accent-gold);
+            margin: 50px 0 20px 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Cards & Grids */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .about-card {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(58, 90, 64, 0.4);
+            border: 1px solid var(--accent-green);
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">🌿 Aaimee Gogoi</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="resume-btn">↓ GitHub</a>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <p class="welcome">Hey! Welcome to my little corner of the internet. ✨</p>
+                <h1>AAIMEE GOGOI</h1>
+                <h2>Data Science & AI Enthusiast</h2>
+                <p class="desc">3rd year B.Sc. student passionate about turning data into meaningful insights and building intelligent solutions.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn">Explore My Journey</a>
+                    <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="btn btn-outline">Visit GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <h3 id="about" class="section-title">01 ABOUT ME</h3>
+        <div class="card about-card">
+            <div class="about-text">
+                <h3>Hi, I’m Aaimee Gogoi! 👋</h3>
+                <p>A curious and dedicated 3rd year B.Sc. student in Data Science and Artificial Intelligence at IIT Guwahati. I love exploring patterns in data, building machine learning models and turning ideas into impactful real-world projects. I'm constantly learning, experimenting and growing — one step at a time.</p>
+                <div class="tags">
+                    <span class="tag">💡 Problem Solver</span>
+                    <span class="tag">🌱 Lifelong Learner</span>
+                    <span class="tag">📊 Analytical Thinker</span>
+                    <span class="tag">🤝 Team Player</span>
+                    <span class="tag">✨ Creative</span>
+                    <span class="tag">🎯 Detail Oriented</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills (From GitHub Tech Stack) -->
+        <h3 id="skills" class="section-title">02 SKILLS</h3>
+        <div class="skills-grid">
+            <div class="skill-card">🐍 Python</div>
+            <div class="skill-card">🐼 Pandas</div>
+            <div class="skill-card">📈 Plotly</div>
+            <div class="skill-card">📊 Matplotlib</div>
+            <div class="skill-card">📉 Seaborn</div>
+            <div class="skill-card">🔬 Scipy</div>
+            <div class="skill-card">⚡ Streamlit</div>
+            <div class="skill-card">🐙 GitHub</div>
+        </div>
+
+        <!-- Certificates -->
+        <h3 id="certificates" class="section-title">03 CERTIFICATES</h3>
+        <div class="three-col">
+            <div class="card" style="text-align: center; color: var(--text-muted);">
+                <p>📜<br>Data Science Workshop Certificate</p>
+            </div>
+            <div class="card" style="text-align: center; color: var(--text-muted);">
+                <p>📜<br>Python & Analytics Badge</p>
+            </div>
+            <div class="card" style="text-align: center; color: var(--text-muted);">
+                <p>📜<br>Add Your Certificate</p>
+            </div>
+        </div>
+
+        <!-- Projects (From GitHub Repositories) -->
+        <h3 id="projects" class="section-title">04 PROJECTS</h3>
+        <div class="three-col">
+            <div class="card project-card">
+                <h4>Olympic Data Analysis</h4>
+                <p>Interactive analysis of Summer Olympics data from 1986–2016 using Python and Pandas to uncover historical trends and performance metrics.</p>
+                <a href="https://github.com/AAIMEE-GOGOI/Olympic-Data-Analysis" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="card project-card">
+                <h4>More Projects Coming Soon!</h4>
+                <p>Exciting data science and AI applications are currently in development. Stay tuned for updates on my repository.</p>
+                <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">Explore Repositories →</a>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <h3 id="education" class="section-title">05 EDUCATION</h3>
+        <div class="card">
+            <h4 style="color: var(--accent-gold);">Indian Institute of Technology, Guwahati</h4>
+            <p style="margin: 5px 0;">Bachelor of Science in Data Science and Artificial Intelligence</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">2024 → 2028 (Expected Graduation)</p>
+        </div>
+
+        <!-- Contact -->
+        <h3 id="contact" class="section-title">06 CONTACT ME</h3>
+        <div class="three-col">
+            <div class="card">
+                <p style="color: var(--accent-gold); font-weight: bold;">GitHub</p>
+                <a href="https://github.com/AAIMEE-GOGOI" style="color: var(--text-light); text-decoration: none; font-size: 0.9rem;" target="_blank">github.com/AAIMEE-GOGOI</a>
+            </div>
+            <div class="card">
+                <p style="color: var(--accent-gold); font-weight: bold;">LinkedIn</p>
+                <a href="https://linkedin.com/in/yourusername" style="color: var(--text-light); text-decoration: none; font-size: 0.9rem;" target="_blank">linkedin.com/in/yourusername</a>
+            </div>
+            <div class="card">
+                <p style="color: var(--accent-gold); font-weight: bold;">Email</p>
+                <p style="color: var(--text-light); font-size: 0.9rem;">your.email@example.com</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Thanks for visiting! Let's connect and build something amazing together. ✨</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">© 2026 Aaimee Gogoi. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
