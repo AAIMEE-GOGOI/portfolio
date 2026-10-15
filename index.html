@@ -1,409 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaimee Gogoi | Data Science & AI Enthusiast</title>
-    <style>
-        :root {
-            --bg-dark: #0a110e;
-            --card-bg: #111d17;
-            --accent-gold: #e5b967;
-            --accent-green: #3a5a40;
-            --text-light: #e0e7e3;
-            --text-muted: #8b9b90;
-            --border-color: #1e3328;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .resume-btn {
-            background: transparent;
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            padding: 6px 14px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 0;
-        }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero-text p.welcome {
-            color: var(--text-muted);
-            margin-bottom: 10px;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .hero-text h2 {
-            font-size: 1.3rem;
-            color: #4ead7a;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p.desc {
-            color: var(--text-light);
-            margin-bottom: 25px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            background-color: var(--accent-green);
-            color: #fff;
-            text-decoration: none;
-            border: 1px solid var(--accent-gold);
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border-color: var(--border-color);
-            color: var(--text-light);
-        }
-
-        .btn:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark);
-        }
-
-        /* Section Title */
-        .section-title {
-            color: var(--accent-gold);
-            margin: 50px 0 20px 0;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-
-        /* Cards & Grids */
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-        }
-
-        .about-card {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.6rem;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            background: rgba(58, 90, 64, 0.4);
-            border: 1px solid var(--accent-green);
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px 10px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .three-col {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card h4 {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .project-link {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aaimee Gogoi — B.Sc. Data Science & Artificial Intelligence student at IIT Guwahati." />
+  <title>Aaimee Gogoi | Data Science & AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="icon" type="image/png" href="assets/totoro-logo.png" />
 </head>
 <body>
+  <div class="noise"></div>
+  <div class="leaf-layer" aria-hidden="true"></div>
 
-    <div class="container">
-        <!-- Navigation -->
-        <nav>
-            <div class="logo">🌿 Aaimee Gogoi</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#certificates">Certificates</a>
-                <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="resume-btn">↓ GitHub</a>
-        </nav>
+  <header class="nav">
+    <a class="brand" href="#top"><img src="assets/totoro-logo.png" alt="Totoro logo"><b>Aaimee Gogoi</b></a>
+    <button class="menu-btn" aria-label="Open menu">☰</button>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <!-- Hero Section -->
-        <main>
-            <section class="hero">
-                <div class="hero-text">
-                    <p class="welcome">Hey! Welcome to my little corner of the internet. ✨</p>
-                    <h1>AAIMEE GOGOI</h1>
-                    <h2>Data Science & AI Enthusiast</h2>
-                    <p class="desc">3rd year B.Sc. (Hons.) student at IIT Guwahati, passionate about turning data into meaningful insights and building intelligent solutions[cite: 3].</p>
-                    <div class="btn-group">
-                        <a href="#projects" class="btn">Explore My Journey</a>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="btn btn-outline">Visit GitHub</a>
-                    </div>
-                </div>
-            </section>
+  <main id="top">
+    <section class="intro-screen">
+      <div class="intro-copy">
+        <p class="eyebrow">A little corner of the internet · 01</p>
+        <h1><span>Hello,</span><br />I'm <strong>Aaimee Gogoi</strong> <span class="wave">👋</span></h1>
+        <p class="intro-sub">Data Science & Artificial Intelligence Student</p>
+        <button class="enter-btn" onclick="document.querySelector('#hero').scrollIntoView({behavior:'smooth'})">
+          Enter my forest <span>→</span>
+        </button>
+      </div>
+      <div class="intro-art">
+        <div class="moon"></div>
+        <img src="assets/totoro-night.jpeg" alt="Night anime forest artwork" />
+      </div>
+      <div class="scroll-note">scroll to explore ↓</div>
+    </section>
 
-            <!-- About Me -->
-            <section id="about">
-                <h3 class="section-title">01 ABOUT ME</h3>
-                <div class="card about-card">
-                    <div class="about-text">
-                        <h3>Hi, I’m Aaimee Gogoi! 👋</h3>
-                        <p>A curious and dedicated student pursuing B.Sc. (Hons.) in Data Science and Artificial Intelligence at Indian Institute of Technology, Guwahati (CPI: 7.57)[cite: 3]. I specialize in machine learning model development, data analysis, and building interactive intelligence dashboards[cite: 3].</p>
-                        <div class="tags">
-                            <span class="tag">💡 Problem Solver</span>
-                            <span class="tag">🌱 Lifelong Learner</span>
-                            <span class="tag">📊 Analytical Thinker</span>
-                            <span class="tag">🏆 Dr. Banikanta Kakati Awardee</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <section id="hero" class="hero section-pad">
+      <div class="hero-content">
+        <p class="eyebrow">DATA SCIENCE · AI · LEARNING IN PUBLIC</p>
+        <h2>Curious about data.<br /><em>Excited by what it can become.</em></h2>
+        <p class="hero-text">
+          I'm a third-year B.Sc. student in Data Science & Artificial Intelligence at
+          the Indian Institute of Technology, Guwahati[cite: 3]. I'm building a strong foundation
+          in programming, data analysis, statistics, machine learning and AI — one project at a time.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my work</a>
+          <a class="btn ghost" href="#contact">Let's connect</a>
+        </div>
+        <div class="mini-facts">
+          <span>📍 IIT Guwahati[cite: 3]</span>
+          <span>🎓 3rd Year · B.Sc. (Hons.)[cite: 3]</span>
+          <span>🌱 Always learning</span>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="image-glow"></div>
+        <img class="hero-image" src="assets/totoro-forest.webp" alt="Green forest anime artwork" />
+        <div class="floating-card card-one">🐾 Curious mind</div>
+        <div class="floating-card card-two">📊 Data + AI</div>
+      </div>
+    </section>
 
-            <!-- Skills -->
-            <section id="skills">
-                <h3 class="section-title">02 SKILLS</h3>
-                <div class="skills-grid">
-                    <div class="skill-card">🐍 Python / R / SQL</div>
-                    <div class="skill-card">🐼 Pandas & NumPy</div>
-                    <div class="skill-card">🤖 Scikit-learn</div>
-                    <div class="skill-card">📈 Matplotlib & Seaborn</div>
-                    <div class="skill-card">📊 Plotly & SciPy</div>
-                    <div class="skill-card">⚡ Streamlit</div>
-                    <div class="skill-card">🐙 Git & GitHub</div>
-                    <div class="skill-card">🪐 Jupyter / Colab</div>
-                </div>
-            </section>
+    <section id="about" class="section section-light">
+      <div class="section-heading">
+        <span>01 / ABOUT</span>
+        <h2>A curious mind in the world of data.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card large">
+          <p>
+            I'm Aaimee Gogoi, a third-year B.Sc. student in Data Science and Artificial Intelligence
+            at the Indian Institute of Technology, Guwahati (CPI: 7.57)[cite: 3]. I'm developing a strong foundation in
+            Python, data analysis, statistics, linear algebra, machine learning and artificial intelligence.
+          </p>
+          <p>
+            I enjoy turning concepts into practical experiments, learning through projects, and
+            gradually building tools that make data easier to understand.
+          </p>
+        </div>
+        <div class="about-card quote">
+          <div class="quote-mark">“</div>
+          <p>Learn. Build. Explore.<br />Repeat.</p>
+          <small>— my current chapter</small>
+        </div>
+      </div>
+    </section>
 
-            <!-- Certificates -->
-            <section id="certificates">
-                <h3 class="section-title">03 CERTIFICATES</h3>
-                <div class="three-col">
-                    <div class="card project-card">
-                        <h4>Machine Learning with Python</h4>
-                        <p>Cognitive AI & IIT Guwahati Coursera certified training in ML algorithms and data workflows[cite: 3].</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Data Science with Python & IBM</h4>
-                        <p>Data Science with Python Cognitive AI and IBM Data Literacy certifications[cite: 3].</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Generative AI - Google</h4>
-                        <p>Certification covering fundamentals of generative AI and practical integrations[cite: 3].</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-            </section>
+    <section id="skills" class="section section-dark">
+      <div class="section-heading">
+        <span>02 / TOOLKIT</span>
+        <h2>Things I'm learning and building with.</h2>
+      </div>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <span class="skill-icon">⌘</span>
+          <h3>Programming</h3>
+          <div class="skill-logo-grid">
+            <div class="skill-tile"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="skill-tile"><i class="devicon-r-original colored"></i><span>R</span></div>
+            <div class="skill-tile"><i class="devicon-azuresqldatabase-plain colored"></i><span>SQL</span></div>
+          </div>
+        </div>
 
-            <!-- Projects -->
-            <section id="projects">
-                <h3 class="section-title">04 PROJECTS</h3>
-                <div class="three-col">
-                    <div class="card project-card">
-                        <h4>Spotify Artist & Song Intelligence - Smoothyfy</h4>
-                        <p>Interactive music intelligence dashboard using Random Forest popularity prediction and K-Means clustering on audio features[cite: 3].</p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold);">Python, Pandas, NumPy, Scikit-learn, Plotly, Streamlit[cite: 3]</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Nykaa Product Success Prediction</h4>
-                        <p>Performed exploratory data analysis and built machine learning models to predict product success from pricing and attributes[cite: 3].</p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold);">Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn[cite: 3]</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Movie Recommendation System - BingeFlix</h4>
-                        <p>Content-based movie recommendation system using feature vectorization, cosine similarity, and TMDB API integration[cite: 3].</p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold);">Python, NumPy, Pandas, Scikit-learn, Streamlit, TMDB API[cite: 3]</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Olympic Data Analysis</h4>
-                        <p>Analyzed Summer Olympics data to extract insights on medal tallies, athletes, and performance trends with interactive dashboards[cite: 3].</p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold);">Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, SciPy, Streamlit[cite: 3]</p>
-                        <a href="https://github.com/AAIMEE-GOGOI/Olympic-Data-Analysis" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                    <div class="card project-card">
-                        <h4>Energy Consumption Anomaly Intelligence (Ongoing)</h4>
-                        <p>Analyzing time-series electricity consumption data to identify abnormal usage patterns and forecasting demand spikes[cite: 3].</p>
-                        <p style="font-size: 0.8rem; color: var(--accent-gold);">Python, Pandas, NumPy, SciPy, Scikit-learn, Plotly, Streamlit[cite: 3]</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" target="_blank" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-            </section>
+        <div class="skill-group">
+          <span class="skill-icon">◫</span>
+          <h3>Data & AI</h3>
+          <div class="skill-logo-grid">
+            <div class="skill-tile"><i class="devicon-numpy-original colored"></i><span>NumPy</span></div>
+            <div class="skill-tile"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
+            <div class="skill-tile"><i class="devicon-matplotlib-plain colored"></i><span>Matplotlib</span></div>
+            <div class="skill-tile"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-learn</span></div>
+            <div class="skill-tile custom-skill"><b>ML</b><span>Machine Learning</span></div>
+            <div class="skill-tile custom-skill"><b>Σ</b><span>Statistics</span></div>
+            <div class="skill-tile custom-skill"><b>∑x</b><span>Linear Algebra</span></div>
+          </div>
+        </div>
 
-            <!-- Education -->
-            <section id="education">
-                <h3 class="section-title">05 EDUCATION</h3>
-                <div class="card">
-                    <h4 style="color: var(--accent-gold);">Indian Institute of Technology, Guwahati</h4>
-                    <p style="margin: 5px 0;">B.Sc. (Hons.) in Data Science and Artificial Intelligence | CPI: 7.57</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">2024 → 2028[cite: 3]</p>
-                </div>
-            </section>
+        <div class="skill-group">
+          <span class="skill-icon">✦</span>
+          <h3>Tools & Platforms</h3>
+          <div class="skill-logo-grid">
+            <div class="skill-tile"><i class="devicon-jupyter-plain colored"></i><span>Jupyter</span></div>
+            <div class="skill-tile"><i class="devicon-streamlit-plain colored"></i><span>Streamlit</span></div>
+            <div class="skill-tile"><i class="devicon-github-original"></i><span>GitHub</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- Contact & Resume -->
-            <section id="contact">
-                <h3 class="section-title">06 CONTACT & RESUME</h3>
-                <div class="three-col">
-                    <div class="card">
-                        <p style="color: var(--accent-gold); font-weight: bold;">GitHub Profile</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" style="color: var(--text-light); text-decoration: none; font-size: 0.9rem;" target="_blank">github.com/AAIMEE-GOGOI</a>
-                    </div>
-                    <div class="card">
-                        <p style="color: var(--accent-gold); font-weight: bold;">Resume</p>
-                        <a href="https://github.com/AAIMEE-GOGOI" style="color: var(--accent-gold); text-decoration: underline; font-size: 0.9rem;" target="_blank">View / Download Resume</a>
-                    </div>
-                    <div class="card">
-                        <p style="color: var(--accent-gold); font-weight: bold;">Email</p>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">g.aaimee@op.iitg.ac.in[cite: 3]</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <section id="certificates" class="section section-paper">
+      <div class="section-heading">
+        <span>03 / CERTIFICATES</span>
+        <h2>Learning, one certificate at a time.</h2>
+        <p class="muted">Certificates earned through professional courses and continuous skill development[cite: 3].</p>
+      </div>
+      <div class="card-grid">
+        <article class="info-card">
+          <div class="card-top">01 <span>🤖</span></div>
+          <h3>Machine Learning with Python</h3>
+          <p>Cognitive AI & IIT Guwahati Coursera certified training in ML algorithms[cite: 3].</p>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+        <article class="info-card">
+          <div class="card-top">02 <span>📊</span></div>
+          <h3>Data Science with Python & IBM</h3>
+          <p>Data Science with Python Cognitive AI and IBM Data Literacy[cite: 3].</p>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+        <article class="info-card">
+          <div class="card-top">03 <span>✨</span></div>
+          <h3>Generative AI - Google</h3>
+          <p>Certification covering fundamentals of generative AI and practical workflows[cite: 3].</p>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>Thanks for visiting! Let's connect and build something amazing together. ✨</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">© 2026 Aaimee Gogoi. All rights reserved.</p>
-        </footer>
-    </div>
+    <section id="projects" class="section section-green">
+      <div class="section-heading">
+        <span>04 / PROJECTS</span>
+        <h2>Projects are growing. 🌱</h2>
+        <p class="muted">Explore my data science, machine learning, and AI application repositories.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card featured">
+          <div class="project-number">01</div>
+          <div>
+            <span class="project-tag">STREAMLIT & ML</span>
+            <h3>Spotify Artist & Song Intelligence - Smoothyfy</h3>
+            <p>Music intelligence dashboard using Random Forest popularity prediction and K-Means clustering on audio features[cite: 3].</p>
+          </div>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener" style="color: #e7c26a; font-size: 12px; margin-top: 15px; display: inline-block;">View Repository →</a>
+        </article>
+        
+        <article class="project-card">
+          <div class="project-number">02</div>
+          <div>
+            <span class="project-tag">DATA ANALYSIS & ML</span>
+            <h3>Nykaa Product Success Prediction</h3>
+            <p>Performed exploratory data analysis and built machine learning models to predict product success from pricing attributes[cite: 3].</p>
+          </div>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener" style="color: #2d6748; font-size: 12px; margin-top: 15px; display: inline-block;">View Repository →</a>
+        </article>
 
+        <article class="project-card">
+          <div class="project-number">03</div>
+          <div>
+            <span class="project-tag">STREAMLIT & API</span>
+            <h3>Movie Recommendation System - BingeFlix</h3>
+            <p>Content-based recommendation engine using feature vectorization, cosine similarity, and TMDB API integration[cite: 3].</p>
+          </div>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener" style="color: #2d6748; font-size: 12px; margin-top: 15px; display: inline-block;">View Repository →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">04</div>
+          <div>
+            <span class="project-tag">DATA VISUALIZATION</span>
+            <h3>Olympic Data Analysis</h3>
+            <p>Analyzed Summer Olympics data to extract insights on medal tallies, athletes, and performance trends[cite: 3].</p>
+          </div>
+          <a href="https://github.com/AAIMEE-GOGOI/Olympic-Data-Analysis" target="_blank" rel="noopener" style="color: #2d6748; font-size: 12px; margin-top: 15px; display: inline-block;">View Repository →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">05</div>
+          <div>
+            <span class="project-tag">ONGOING · TIME SERIES</span>
+            <h3>Energy Consumption Anomaly Intelligence</h3>
+            <p>Analyzing electricity consumption time-series data to identify abnormal usage patterns and forecast demand spikes[cite: 3].</p>
+          </div>
+          <a href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener" style="color: #2d6748; font-size: 12px; margin-top: 15px; display: inline-block;">View Repository →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="night-break">
+      <img src="assets/totoro-night.jpeg" alt="Night forest anime artwork" />
+      <div class="night-overlay"></div>
+      <div class="night-text">
+        <span>05 / THE JOURNEY</span>
+        <h2>Every good project<br /><em>starts with curiosity.</em></h2>
+      </div>
+    </section>
+
+    <section id="education" class="section section-light">
+      <div class="section-heading">
+        <span>06 / EDUCATION</span>
+        <h2>Where I'm learning.</h2>
+      </div>
+      <div class="education-card">
+        <div class="edu-mark">IITG</div>
+        <div>
+          <span class="edu-period">2024 — 2028 · EXPECTED[cite: 3]</span>
+          <h3>Indian Institute of Technology, Guwahati[cite: 3]</h3>
+          <p>Bachelor of Science (Hons.) in Data Science and Artificial Intelligence[cite: 3]</p>
+          <strong>Current CPI: 7.57 · 3rd Year[cite: 3]</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-copy">
+        <span>07 / CONTACT & RESUME</span>
+        <h2>Let's stay in touch.</h2>
+        <p>
+          Whether it's a project, an idea, or simply a conversation about data and AI,
+          I'd love to connect.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener">
+          <span>GitHub</span><small>My code & projects</small><b>↗</b>
+        </a>
+        <a class="contact-link" href="https://linkedin.com" target="_blank" rel="noopener">
+          <span>LinkedIn</span><small>Connect with me</small><b>↗</b>
+        </a>
+        <a class="contact-link" href="mailto:g.aaimee@op.iitg.ac.in">
+          <span>Email</span><small>g.aaimee@op.iitg.ac.in[cite: 3]</small><b>↗</b>
+        </a>
+        <a class="contact-link" href="https://github.com/AAIMEE-GOGOI" target="_blank" rel="noopener">
+          <span>Resume</span><small>View resume on GitHub profile</small><b>↗</b>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>AG</b> · Aaimee Gogoi</div>
+    <div>Built with curiosity, code & a little forest magic 🌿</div>
+    <div>© <span id="year"></span></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
